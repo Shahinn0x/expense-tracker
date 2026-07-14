@@ -1,17 +1,33 @@
 {
   
   "name": "ExpenseTrackerJF",
+  
   "version": "1.0.0",
+  
   "description": "Simple Node.js Expense Tracker",
+  
   "main": "app.js",
+  
   "scripts": {
-    "start": "node app.js"
+  
+    
+  "start": "node app.js"
+  
   },
-
+  
   "dependencies": {
-    "ejs": "^6.0.1",
-    "express": "^5.2.1",
-    "express-session": "^1.19.0"
+  
+    
+  "ejs": "^6.0.1",
+  
+    
+  "express": "^5.2.1",
+  
+    
+  "express-session": "^1.19.0",
+  
+    
+  "mongoose": "^9.7.4"
+  
   }
 }
-
