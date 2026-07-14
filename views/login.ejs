@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+</head>
+<body style="<%- styles.CONTAINER_STYLE %> display: flex; align-items: center; justify-content: center;">
+  <div style="<%- styles.CARD_STYLE %> min-width: 350px; margin: 0;">
+    <h2 style="margin-top: 0;">Login Page</h2>
+    <% if (error) { %>
+      <p style="color: red; font-size: 14px;"><%= error %></p>
+    <% } %>
+    <form action="/login" method="POST">
+      <label>Username:</label>
+      <input type="text" name="username" style="<%- styles.INPUT_STYLE %>" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" style="<%- styles.INPUT_STYLE %>" required>
+
+      <button type="submit" style="<%- styles.BUTTON_GREEN %>">Login</button>
+    </form>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="/register" style="color: #337ab7; text-decoration: none; font-size: 14px;">New user? Register here</a>
+    </div>
+  </div>
+</body>
+</html>

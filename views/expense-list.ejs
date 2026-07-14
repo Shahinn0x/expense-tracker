@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense List</title>
+</head>
+<body style="<%- styles.CONTAINER_STYLE %>">
+  <div style="text-align: center; margin-bottom: -20px;">
+    <a href="/home" style="color: #337ab7; text-decoration: none; font-weight: bold; margin-right: 15px;">Home</a>
+    <a href="/add-expense" style="color: #337ab7; text-decoration: none; font-weight: bold;">Add Expense</a>
+  </div>
+  
+  <div style="<%- styles.CARD_STYLE %>">
+    <h2 style="margin-top: 0; text-align: center; margin-bottom: 30px;">Expense List</h2>
+    
+    <% if (expenses.length === 0) { %>
+      <p style="text-align: center; color: #777;">No expenses found. Click "Add Expense" to add some.</p>
+    <% } %>
+
+    <% expenses.forEach(expense => { %>
+      <div style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; position: relative;">
+        <h3 style="color: #4CAF50; margin: 0 0 8px 0;"><%= expense.name %></h3>
+        <p style="margin: 4px 0; font-size: 14px; color: #333;"><strong>Amount:</strong> $<%= expense.amount %></p>
+        <p style="margin: 4px 0; font-size: 14px; color: #333;"><strong>Date:</strong> <%= expense.date %></p>
+        <% if (expense.description) { %>
+          <p style="margin: 4px 0; font-size: 14px; color: #666; font-style: italic;">"<%= expense.description %>"</p>
+        <% } %>
+        <div style="margin-top: 10px;">
+          <a href="/update-expense/<%= expense.id %>" style="color: #337ab7; text-decoration: none; font-size: 13px; font-weight: bold;">Edit Expense</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

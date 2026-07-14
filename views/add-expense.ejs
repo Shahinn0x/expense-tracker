@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Expense</title>
+</head>
+<body style="<%- styles.CONTAINER_STYLE %>">
+  <div style="text-align: center; margin-bottom: -20px;">
+    <a href="/home" style="color: #337ab7; text-decoration: none; font-weight: bold; margin-right: 15px;">Home</a>
+    <a href="/expense-list" style="color: #337ab7; text-decoration: none; font-weight: bold;">View Expenses</a>
+  </div>
+  <div style="<%- styles.CARD_STYLE %>">
+    <h2 style="margin-top: 0; text-align: center;">Add New Expense</h2>
+    <form action="/add-expense" method="POST">
+      <label>Expense Name:</label>
+      <input type="text" name="name" style="<%- styles.INPUT_STYLE %>" required>
+
+      <label>Amount</label>
+      <input type="number" step="0.01" name="amount" style="<%- styles.INPUT_STYLE %>" required>
+
+      <label>Date:</label>
+      <input type="date" name="date" style="<%- styles.INPUT_STYLE %>" required>
+
+      <label>Description:</label>
+      <textarea name="description" rows="4" style="<%- styles.INPUT_STYLE %> height: auto;"></textarea>
+
+      <button type="submit" style="<%- styles.BUTTON_GREEN %>">Add Expense</button>
+    </form>
+  </div>
+</body>
+</html>
